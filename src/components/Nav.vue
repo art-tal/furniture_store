@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg text-white navbar-dark
-   bg-dark">
+  <nav class="navbar navbar-expand-lg text-white navbar-light
+   bg-light">
       <a class="logo navbar-brand" href="#">
-        <img src="../assets/image/logo.png" alt="logo">
+        <img src="../assets/image/logo-70.png" alt="logo">
       </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
