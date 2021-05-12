@@ -1,5 +1,5 @@
 <template>
-  <div class="before_nav container-fluid bg-dark mx-0 px-0 py-2 text-secondary">
+  <header class="before_nav container-fluid bg-dark mx-0 px-0 py-2 text-secondary">
     <div class="container d-flex">
 <!--      <div class="row">-->
         <div class="mr-4">
@@ -42,7 +42,7 @@
 <!--      </div>-->
     </div>
 
-  </div>
+  </header>
   <nav-app/>
 </template>
 
@@ -98,7 +98,6 @@ export default {
 
   .active-wrap {
     display: block !important;
-    //right: 0!important;
     transform: translateX(-150px);
     transition-property: transform;
     transition-delay: 500ms;
@@ -108,10 +107,9 @@ export default {
 
 
 
-  @media (max-width: 767.9px) {
+  @media (max-width: 991.9px) {
     .wrap {
       display: none;
-      //width: 150px;
       padding: 15px 20px;
       position: absolute;
       top: 37px;
@@ -120,10 +118,6 @@ export default {
       background-color: #6c757d;
       color: #f8f9fa;
 
-      //transition-property: right;
-      //transition-delay: 100ms;
-      //transition-duration: 1s;
-      //transition-timing-function: linear;
       .person-link {
         display: block;
         margin: 0 10px;

@@ -1,16 +1,16 @@
 <template>
-  <header class="home">
-
-  </header>
+  <div class="home">
+    <carousel/>
+  </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import Carousel from "../components/Carousel";
 
 export default {
   name: "Home",
   components: {
-
+    Carousel,
   },
 };
 </script>
