@@ -15,7 +15,8 @@
       </button>
 
       <div class="drop mx-4 bg-light"
-           :class="{'active-wrap' : showNav}">
+           :class="showNav ? 'active-wrap' : 'disable-wrap' "
+      >
         <ul class="d-flex align-items-center my-0 h-100 p-0 list">
           <li class="active">
             <router-link to="/" class="nav_link">Home</router-link>
@@ -64,7 +65,26 @@ export default {
 </script>
 
 <style scoped lang="scss">
-//@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
+
+
+@keyframes show {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes hide {
+  from {
+    left: 0;
+  }
+  to {
+    left: -200px;
+    display: none;
+  }
+}
 
   a.logo {
     margin-right: 30px;
@@ -116,13 +136,14 @@ ul {
   }
 }
 
-
 .active-wrap {
   display: block !important;
-  transition-property: transform;
-  transition-delay: 500ms;
-  transition-duration: 2s;
-  transition-timing-function: linear;
+  animation: show 1s;
+  animation-fill-mode: forwards;
+}
+.disable-wrap {
+  animation: hide 1s;
+  animation-fill-mode: forwards;
 }
 
 @media (max-width: 991.9px) {
@@ -131,17 +152,23 @@ ul {
   }
 
   .drop {
-    display: none;
+    width: 200px;
+    background-color: #d5d4d4 !important;
     position: absolute !important;
     top: 117px !important;
-    left: 0;
     padding: 10px 30px;
     margin: 0 !important;
+    z-index: 10;
     ul {
       display: block !important;
       li {
         display: block;
-        margin: 10px 0;
+        margin: 15px;
+        font-size: 2rem;
+        font-weight: normal;
+        &:hover {
+          font-weight: bold;
+        }
       }
     }
   }

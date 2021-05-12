@@ -1,7 +1,6 @@
 <template>
   <header class="before_nav container-fluid bg-dark mx-0 px-0 py-2 text-secondary">
     <div class="container d-flex">
-<!--      <div class="row">-->
         <div class="mr-4">
           <label for="choice" class="mr-2 mb-0">Language:</label>
           <select id="choice"
@@ -10,8 +9,7 @@
                   class="bg-dark text-light border-0">
             <option v-for="(lang, key) in languages"
                     :key="key"
-                    :value="lang"
-                    selected>{{ lang }}</option>
+                    :value="lang"><span>{{ lang }}</span></option>
 
           </select>
         </div>
@@ -28,7 +26,9 @@
         </div>
         <div class="flex-grow-1 text-right">
           <i class="bi bi-person-circle text-light" @click="togglePersonMenu"></i>
-          <div class="wrap" :class="{'active-wrap' : showPersonMenu}">
+          <div class="wrap"
+               :class="showPersonMenu ? 'disable-wrap' : 'active-wrap'"
+          >
             <router-link to="/" class="person-link text-white">Account</router-link>
             <span class="mx-3">|</span>
             <router-link to="/" class="person-link text-white">Wishlist</router-link>
@@ -39,7 +39,6 @@
           </div>
 
         </div>
-<!--      </div>-->
     </div>
 
   </header>
@@ -87,8 +86,38 @@ export default {
 
 <style scoped lang="scss">
 
+@keyframes show {
+  from {
+    right: -150px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+@keyframes hide {
+  from {
+    right: 0;
+  }
+  to {
+    right: -150px;
+    display: none;
+  }
+}
+
   .wrap {
     display: block;
+    width: 100%;
+  }
+
+  .active-wrap {
+    display: block !important;
+    animation: show 1s;
+    animation-fill-mode: forwards;
+  }
+  .disable-wrap {
+    animation: hide 1s;
+    animation-fill-mode: forwards;
   }
 
   .bi-person-circle {
@@ -96,20 +125,10 @@ export default {
     font-size: 1.8rem;
   }
 
-  .active-wrap {
-    display: block !important;
-    transform: translateX(-150px);
-    transition-property: transform;
-    transition-delay: 500ms;
-    transition-duration: 2s;
-    transition-timing-function: linear;
-  }
-
-
 
   @media (max-width: 991.9px) {
     .wrap {
-      display: none;
+      width: 150px;
       padding: 15px 20px;
       position: absolute;
       top: 37px;
@@ -120,7 +139,11 @@ export default {
 
       .person-link {
         display: block;
-        margin: 0 10px;
+        margin: 15px;
+        font-size: 2rem;
+        &:hover {
+          font-weight: bold;
+        }
       }
       span {
         display: none;
