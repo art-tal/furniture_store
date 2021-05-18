@@ -9,7 +9,7 @@
                   class="bg-dark text-light border-0">
             <option v-for="(lang, key) in languages"
                     :key="key"
-                    :value="lang"><span>{{ lang }}</span></option>
+                    :value="lang"><span class="option">{{ lang }}</span></option>
 
           </select>
         </div>
@@ -124,6 +124,8 @@ export default {
     display: none;
     font-size: 1.8rem;
   }
+
+
 
 
   @media (max-width: 991.9px) {

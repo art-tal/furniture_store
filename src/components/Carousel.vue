@@ -2,12 +2,17 @@
 <div class="my-carousel container-fluid">
   <div class="frame position-relative">
     <div class="image_container">
-      <img src="../assets/image/44654-9-china-cabinet-png-download-free.png" alt="photo-clip" class="image_item">
+<!--      <img src="../assets/image/44654-9-china-cabinet-png-download-free.png" alt="photo-clip" class="image_item">-->
+      <img v-for="(img_item, key) in images"
+           :key="key"
+           :src=`../assets/image/carousel_img/${img_item}`
+            alt="photo-clip"
+            class="image_item">
     </div>
-    <button class="btn position-absolute btn_control" id="prev">
+    <button class="btn position-absolute btn_control" id="prev" @click="prevImage">
       <i class="bi bi-caret-left-fill"></i>
     </button>
-    <button class="btn position-absolute btn_control" id="next">
+    <button class="btn position-absolute btn_control" id="next" @click="nextImage">
       <i class="bi bi-caret-right-fill"></i>
     </button>
   </div>
@@ -20,11 +25,36 @@ export default {
 
   data() {
     return {
-
+      images: [
+          'childroom-1.jpg',
+          'gorka-1.jpg',
+          'gorka-2.jpg',
+          'gorka-3.jpg',
+          'gorka-4.jpg',
+          'gorka-5.jpg',
+          'gorka-6.jpg',
+          'gorka-7.jpg',
+          'kitchen-1.jpg',
+          'prihogaya-1.jpg',
+          'prihogaya-2.jpg'
+      ],
     }
   },
 
-  methods: {}
+  created() {
+    this.getImages();
+  },
+
+  methods: {
+    // getImages() {
+    //   let response = fetch('php/getImageCarousel.php');
+    //   let list = response.text
+    //   console.log(list);
+    // }
+
+    nextImage() {},
+    prevImage() {},
+  }
 }
 </script>
 
