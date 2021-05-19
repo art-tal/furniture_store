@@ -1,13 +1,9 @@
 <template>
 <div class="my-carousel container-fluid">
   <div class="frame position-relative">
-    <div class="image_container">
-<!--      <img src="../assets/image/44654-9-china-cabinet-png-download-free.png" alt="photo-clip" class="image_item">-->
-      <img v-for="(img_item, key) in images"
-           :key="key"
-           :src=`../assets/image/carousel_img/${img_item}`
-            alt="photo-clip"
-            class="image_item">
+    <div class="image_container bg-carousel"
+         :style="'background-image: url(' + getImage + ');'">
+
     </div>
     <button class="btn position-absolute btn_control" id="prev" @click="prevImage">
       <i class="bi bi-caret-left-fill"></i>
@@ -20,66 +16,102 @@
 </template>
 
 <script>
+
 export default {
   name: "Carousel",
 
   data() {
     return {
+      index: 0,
       images: [
-          'childroom-1.jpg',
-          'gorka-1.jpg',
-          'gorka-2.jpg',
-          'gorka-3.jpg',
-          'gorka-4.jpg',
-          'gorka-5.jpg',
-          'gorka-6.jpg',
-          'gorka-7.jpg',
+          'children_room-1.jpg',
+          'cabinet-1.jpg',
+          'cabinet-2.jpg',
+          'cabinet-3.jpg',
+          'cabinet-4.jpg',
+          'cabinet-5.jpg',
+          'cabinet-6.jpg',
+          'cabinet-7.jpg',
           'kitchen-1.jpg',
-          'prihogaya-1.jpg',
-          'prihogaya-2.jpg'
+          'hallway-1.jpg',
+          'hallway-2.jpg'
       ],
+      pos: 100,
     }
   },
 
   created() {
-    this.getImages();
+    setInterval( this.nextImage, 5000);
+    // setInterval( this.slide, 5000);
+    // this.slide();
+
+  },
+
+  computed: {
+    getImage() {
+      return require(`../assets/image/carousel_img/${this.images[this.index]}`);
+    }
   },
 
   methods: {
-    // getImages() {
-    //   let response = fetch('php/getImageCarousel.php');
-    //   let list = response.text
-    //   console.log(list);
-    // }
+    nextImage() {
+      ++this.index;
+      if (this.index >= this.images.length) {
+        this.index = 0;
+      }
+    },
+    prevImage() {
+      --this.index;
+      if (this.index < 0) {
+        this.index = this.images.length - 1;
+      }
+    },
 
-    nextImage() {},
-    prevImage() {},
+    // slide() {
+    //   while (this.pos > 0) {
+    //     setTimeout( () => {--this.pos;}, 10 );
+    //     console.log(this.pos);
+    //   }
+    //   this.nextImage();
+    //   while (this.pos < 100) {
+    //     setTimeout( () => {++this.pos;}, 10 );
+    //     console.log(this.pos);
+    //   }}
+
+
   }
 }
 </script>
 
 <style scoped lang="scss">
   .container-fluid.my-carousel {
-    padding: 25px;
+    padding: 0;
     background-color: #eeeeee;
   }
 
+  .bg-carousel {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
 
       .frame {
-        height: 400px;
-        .image_container img {
-          display: block;
+        height: 500px;
+        width: 100%;
+        .image_container {
           width: 100%;
-          height: 400px;
-          object-fit: contain;
+          height: 100%;
         }
+
         .btn_control {
           box-sizing: border-box;
           width: 40px;
           height: 40px;
           border-radius: 50%;
           background-color: rgba(0,0,0,0.05);
-          top: 180px;
+          top: 230px;
           .bi {
             font-size: 2rem;
             margin: auto;
@@ -92,8 +124,11 @@ export default {
             }
           }
         }
+        #prev {
+          left: 20px;
+        }
         #next {
-          right: 0;
+          right: 20px;
         }
       }
 
