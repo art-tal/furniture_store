@@ -1,6 +1,6 @@
 <template>
 <div class="my-carousel container-fluid">
-  <div class="frame position-relative">
+  <div class="container frame position-relative">
     <div class="image_container bg-carousel"
          :style="'background-image: url(' + getImage + ');'">
 
