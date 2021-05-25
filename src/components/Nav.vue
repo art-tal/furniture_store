@@ -2,7 +2,10 @@
 
   <div class="container-fluid bg-light p-2">
     <nav class="container text-dark bg-light d-flex">
-      <router-link to="/" class="mr-5">
+      <router-link to="/"
+                   class="mr-5"
+                   exact
+      >
         <img src="../assets/image/logo-70.png" alt="logo">
       </router-link>
 
@@ -19,7 +22,13 @@
       >
         <ul class="d-flex align-items-center my-0 h-100 p-0 list">
           <li class="active">
-            <router-link to="/" class="nav_link">Home</router-link>
+            <router-link class="nav_link"
+                         active-class="active"
+                         tag="a"
+                         exact
+                         to="/"
+            >
+              Home</router-link>
           </li>
           <li class="dropdown">
             <a class="nav_link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
