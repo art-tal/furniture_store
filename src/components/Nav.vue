@@ -35,8 +35,25 @@
               Catalog
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <router-link class="nav_link d-block" to="/">Serial furniture</router-link>
-              <router-link class="nav_link d-block" to="/">Custom furniture</router-link>
+              <router-link class="nav_link d-block"
+                           :to="'/catalog/' + catalogTypes.serial"
+              >Serial furniture</router-link>
+              <router-link class="nav_link d-block"
+                           :to="'/catalog/' + catalogTypes.custom"
+              >Custom furniture</router-link>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a class="nav_link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Galary
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <router-link class="nav_link d-block" to="/">Kitchen</router-link>
+              <router-link class="nav_link d-block" to="/">Children`s room</router-link>
+              <router-link class="nav_link d-block" to="/">Cabinet</router-link>
+              <router-link class="nav_link d-block" to="/">Hallway</router-link>
+              <router-link class="nav_link d-block" to="/">Wardrobe</router-link>
+              <router-link class="nav_link d-block" to="/">Bed</router-link>
             </div>
           </li>
           <li class="nav-item">
@@ -62,6 +79,13 @@ export default {
     return {
       basketLength: 0,
       showNav: true,
+
+      catalogTypes: {
+        serial: 'serial',
+        custom:'custom',
+      },
+
+
     }
   },
 
@@ -74,6 +98,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../assets/styles/index";
 
 
 @keyframes show {
@@ -120,6 +145,19 @@ ul {
       margin-right: 15px;
       color: #3c3c3c !important;
   }
+}
+
+.dropdown {
+  max-width: 200px ;
+  .dropdown-menu {
+    padding: 0;
+    .nav_link {
+      width: 100%;
+      padding: 10px;
+      border-bottom: 1px solid $secondary_color;
+      margin: 0;
+    }
+    }
 }
 
 .input-group {

@@ -3,7 +3,6 @@
   <div class="container frame position-relative">
     <div class="image_container bg-carousel"
          :style="'background-image: url(' + getImage + ');'">
-
     </div>
     <button class="btn position-absolute btn_control" id="prev" @click="prevImage">
       <i class="bi bi-caret-left-fill"></i>
@@ -42,9 +41,6 @@ export default {
 
   created() {
     setInterval( this.nextImage, 5000);
-    // setInterval( this.slide, 5000);
-    // this.slide();
-
   },
 
   computed: {

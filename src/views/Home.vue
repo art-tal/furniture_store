@@ -1,10 +1,11 @@
 <template>
-  <div class="home">
+  <div class="home mb-5">
     <carousel/>
 
     <div class="container">
-      <div class="row">
-        <div class="col-3"
+      <h2 class="my-5 text-center">Our novelties</h2>
+      <div class="row align-items-stretch">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5"
              v-for="(product, key) in products"
              :key="key"
         >
@@ -30,11 +31,33 @@ export default {
     return {
       products: [
         {
-          name: 'Kitchen',
-          info: 'A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options. If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.',
-          avatar: '../assets/image/44654-9-china-cabinet-png-download-free.png',
-          date: new Date(),
-        }
+          name: 'Kabinet',
+          info: 'A card is a flexible and extensible content container.',
+          avatar: 'cabinet.png',
+          sale: false,
+          date: new Date()- - 1000 * 60 * 60 * 24 * 10,
+        },
+        {
+          name: 'Wardrobe',
+          info: 'A card is a flexible and extensible content container.',
+          avatar: 'wardrobe.png',
+          sale: true,
+          date: new Date() - 1000 * 60 * 60 * 24 * 500,
+        },
+        {
+          name: 'Desk',
+          info: 'A card is a flexible and extensible content container.',
+          avatar: 'desk.png',
+          sale: false,
+          date: new Date() - 1000 * 60 * 60 * 24 * 120,
+        },
+        {
+          name: 'Sliding',
+          info: 'A card is a flexible and extensible content container.',
+          avatar: 'Sliding.jpg',
+          sale: false,
+          date: new Date() - 1000 * 60 * 60 * 24 * 50,
+        },
       ],
     }
   },
@@ -44,3 +67,13 @@ export default {
 
 };
 </script>
+
+<style scoped lang="scss">
+  .home {
+    .container {
+      .row {
+        align-items: stretch;
+      }
+    }
+  }
+</style>
