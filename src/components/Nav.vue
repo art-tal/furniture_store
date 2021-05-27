@@ -27,19 +27,22 @@
                          tag="a"
                          exact
                          to="/"
+                         @click="toggleNav"
             >
               Home</router-link>
           </li>
           <li class="nav_link">
             <router-link class="nav_link d-block"
-                         to="/"
                          exact
+                         to="/"
+                         @click="toggleNav"
             >Serial furniture</router-link>
           </li>
           <li class="nav_link">
             <router-link class="nav_link d-block"
-                         to="custom"
                          exact
+                         to="Custom_furniture_galery"
+                         @click="toggleNav"
             >Custom furniture galery</router-link>
           </li>
 
@@ -71,10 +74,18 @@
 <!--            </div>-->
 <!--          </li>-->
           <li class="nav-item">
-            <router-link class="nav_link" to="/">About</router-link>
+            <router-link class="nav_link"
+                         exact
+                         to="/"
+                         @click="toggleNav"
+            >About</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav_link" to="/">Contacts</router-link>
+            <router-link class="nav_link"
+                         exact
+                         to="/"
+                         @click="toggleNav"
+            >Contacts</router-link>
           </li>
         </ul>
       </div>
@@ -92,7 +103,7 @@ export default {
   data() {
     return {
       basketLength: 0,
-      showNav: true,
+      showNav: false,
 
       catalogTypes: {
         serial: 'serial',

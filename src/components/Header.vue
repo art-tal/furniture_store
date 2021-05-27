@@ -29,13 +29,29 @@
           <div class="wrap"
                :class="showPersonMenu ? 'disable-wrap' : 'active-wrap'"
           >
-            <router-link to="/" class="person-link text-white">Account</router-link>
+            <router-link exact
+                         to="/"
+                         class="person-link text-white"
+                         @click="togglePersonMenu"
+            >Account</router-link>
             <span class="mx-3">|</span>
-            <router-link to="/" class="person-link text-white">Wishlist</router-link>
+            <router-link exact
+                         to="/"
+                         class="person-link text-white"
+                         @click="togglePersonMenu"
+            >Wishlist</router-link>
             <span class="mx-3">|</span>
-            <router-link to="/" class="person-link text-white">Log In</router-link>
+            <router-link exact
+                         to="/"
+                         class="person-link text-white"
+                         @click="togglePersonMenu"
+            >Log In</router-link>
             <span class="mx-3">|</span>
-            <router-link to="/" class="person-link text-white">Sign Up</router-link>
+            <router-link exact
+                         to="/"
+                         class="person-link text-white"
+                         @click="togglePersonMenu"
+            >Sign Up</router-link>
           </div>
 
         </div>

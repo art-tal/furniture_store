@@ -1,6 +1,6 @@
 <template>
 <div class="my-carousel container-fluid">
-  <div class="container frame position-relative">
+  <div class="container-lg p-0 px-lg-4 frame position-relative">
     <div class="image_container bg-carousel"
          :style="'background-image: url(' + getImage + ');'">
     </div>
@@ -106,7 +106,7 @@ export default {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background-color: rgba(0,0,0,0.05);
+          background-color: rgba(0,0,0,0.3);
           top: 230px;
           .bi {
             font-size: 2rem;
@@ -114,7 +114,7 @@ export default {
             color: rgba(255,255,255,0.4);
           }
           &:hover {
-            background-color: rgba(0,0,0,0.3);
+            background-color: rgba(0,0,0,0.4);
             .bi {
               color: #ffffff;
             }
@@ -128,7 +128,36 @@ export default {
         }
       }
 
+@media (min-width: 992px) and (max-width: 1199px) {
 
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .frame {
+    height: 400px;
+    .btn_control {
+      top: 180px;
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .frame {
+    height: 350px;
+    .btn_control {
+      top: 155px;
+  }
+    }
+}
+
+@media (max-width: 575px) {
+  .frame {
+    height: 50vw;
+    .btn_control {
+      top: calc(25vw - 20px);
+    }
+  }
+}
 
 
 </style>

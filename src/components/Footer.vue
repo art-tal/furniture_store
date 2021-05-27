@@ -2,7 +2,7 @@
   <footer class="container-fluid px-0">
     <div class="first_line bg-secondary py-4">
       <div class="container row m-auto">
-        <div class="col-6">
+        <div class="col-md-6 col-12 mb-3  text-left ">
           <a href="/" class="d-inline text-dark">
             <i class="bi bi-telephone-fill"></i>
              Call us:
@@ -10,7 +10,7 @@
           </a>
 
         </div>
-        <div class="col-6">
+        <div class="col-md-6 col-12 mb-3  text-left ">
           <a href="/" class="d-inline text-dark">
             <i class="bi bi-envelope-fill"></i>
              Write to us:
@@ -23,7 +23,7 @@
 
     <div class="second_line bg-dark text-secondary">
       <div class="container row justify-content-between mx-auto py-4">
-        <div class="col-4 social w-auto">
+        <div class="col-md-4 col-12 mb-4 social w-auto">
           <h3>Social</h3>
           <div class="messengers d-flex justify-content-start pt-4">
             <a href="https://www.facebook.com/" class="facebook" target="_blank"></a>
@@ -32,7 +32,7 @@
             <a href="https://www.youtube.com" class="youtube" target="_blank"></a>
           </div>
         </div>
-        <div class="col-4 information">
+        <div class="col-md-4 col-12 mb-4 information">
           <h3>Information</h3>
           <ul>
             <li>Бесплатный замер;</li>
@@ -44,7 +44,7 @@
             <li>Доставка и установка</li>
           </ul>
         </div>
-        <div class="col-4 contact">
+        <div class="col-md-4 col-12 mb-4 contact">
           <h3>Contact Us</h3>
           <p>Furniture Store</p>
           <p>RIO media</p>
@@ -64,18 +64,18 @@
     </div>
 
     <div class="third_line py-2">
-      <div class="container m-auto d-flex justify-content-between">
-        <div>
+      <div class="container m-auto d-lg-flex justify-content-between">
+        <div class="mb-3 text-lg-left text-center">
           &#xA9; Copyright 2021 Talanov A, All Rights Reserved
         </div>
-        <div class="d-flex">
-          <router-link to="/" tag="a" class="d-inline w-auto h-auto text-secondary">About Us</router-link>
-          <span class="mx-3">|</span>
-          <router-link to="/" tag="a" class="d-inline w-auto h-auto text-secondary">Delivery & Returns</router-link>
-          <span class="mx-3">|</span>
-          <router-link to="/" tag="a" class="d-inline w-auto h-auto text-secondary">Terms & Conditions</router-link>
-          <span class="mx-3">|</span>
-          <router-link to="/" tag="a" class="d-inline w-auto h-auto text-secondary">Contact Us</router-link>
+        <div class="d-sm-flex justify-content-between">
+          <router-link to="/" tag="a" class="d-sm-inline-block d-block mb-3 w-auto h-auto text-secondary">About Us</router-link>
+          <span class="mx-3 d-none d-sm-inline">|</span>
+          <router-link to="/" tag="a" class="d-sm-inline-block d-block mb-3 w-auto h-auto text-secondary">Delivery & Returns</router-link>
+          <span class="mx-3 d-none d-sm-inline">|</span>
+          <router-link to="/" tag="a" class="d-sm-inline-block d-block mb-3 w-auto h-auto text-secondary">Terms & Conditions</router-link>
+          <span class="mx-3 d-none d-sm-inline">|</span>
+          <router-link to="/" tag="a" class="d-sm-inline-block d-block mb-3 w-auto h-auto text-secondary">Contact Us</router-link>
         </div>
       </div>
     </div>

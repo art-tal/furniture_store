@@ -18,7 +18,7 @@
 
 <script>
 import Carousel from "../components/Carousel";
-import Card from "../components/Card";
+import Card from "../components/CardForHome";
 
 export default {
   name: "Home",
