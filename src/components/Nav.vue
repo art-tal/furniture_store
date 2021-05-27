@@ -30,32 +30,46 @@
             >
               Home</router-link>
           </li>
-          <li class="dropdown">
-            <a class="nav_link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Catalog
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <router-link class="nav_link d-block"
-                           :to="'/catalog/' + catalogTypes.serial"
-              >Serial furniture</router-link>
-              <router-link class="nav_link d-block"
-                           :to="'/catalog/' + catalogTypes.custom"
-              >Custom furniture</router-link>
-            </div>
+          <li class="nav_link">
+            <router-link class="nav_link d-block"
+                         to="/"
+                         exact
+            >Serial furniture</router-link>
           </li>
-          <li class="dropdown">
-            <a class="nav_link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Galary
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <router-link class="nav_link d-block" to="/">Kitchen</router-link>
-              <router-link class="nav_link d-block" to="/">Children`s room</router-link>
-              <router-link class="nav_link d-block" to="/">Cabinet</router-link>
-              <router-link class="nav_link d-block" to="/">Hallway</router-link>
-              <router-link class="nav_link d-block" to="/">Wardrobe</router-link>
-              <router-link class="nav_link d-block" to="/">Bed</router-link>
-            </div>
+          <li class="nav_link">
+            <router-link class="nav_link d-block"
+                         to="custom"
+                         exact
+            >Custom furniture galery</router-link>
           </li>
+
+
+<!--          <li class="dropdown">-->
+<!--            <a class="nav_link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--              Catalog-->
+<!--            </a>-->
+<!--            <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--              <router-link class="nav_link d-block"-->
+<!--                           to="/catalog"-->
+<!--              >Serial furniture</router-link>-->
+<!--              <router-link class="nav_link d-block"-->
+<!--                           to="/catalog"-->
+<!--              >Custom furniture galery</router-link>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="dropdown">-->
+<!--            <a class="nav_link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--              Galary-->
+<!--            </a>-->
+<!--            <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--              <router-link class="nav_link d-block" to="/">Kitchen</router-link>-->
+<!--              <router-link class="nav_link d-block" to="/">Children`s room</router-link>-->
+<!--              <router-link class="nav_link d-block" to="/">Cabinet</router-link>-->
+<!--              <router-link class="nav_link d-block" to="/">Hallway</router-link>-->
+<!--              <router-link class="nav_link d-block" to="/">Wardrobe</router-link>-->
+<!--              <router-link class="nav_link d-block" to="/">Bed</router-link>-->
+<!--            </div>-->
+<!--          </li>-->
           <li class="nav-item">
             <router-link class="nav_link" to="/">About</router-link>
           </li>
@@ -203,18 +217,22 @@ ul {
     background-color: #d5d4d4 !important;
     position: absolute !important;
     top: 117px !important;
-    padding: 10px 30px;
+    //padding: 10px 30px;
     margin: 0 !important;
     z-index: 10;
     ul {
       display: block !important;
       li {
         display: block;
-        margin: 15px;
+        width: 100%;
+        //margin: 15px;
         font-size: 2rem;
         font-weight: normal;
+        padding: 15px 20px;
+        border-bottom: 1px solid $secondary_color;
         &:hover {
           font-weight: bold;
+          background-color: $secondary_color;
         }
       }
     }

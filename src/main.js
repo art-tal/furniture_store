@@ -7,3 +7,5 @@ import './assets/styles/index.scss';
 
 
 createApp(App).use(store).use(router).mount("#app");
+
+

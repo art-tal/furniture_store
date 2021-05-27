@@ -1,91 +1,92 @@
 <template>
     <section class="container-fluid">
-<!--        <img :src="require('../img/' + dirBG + '/notFound.jpg')" alt="Page not found">-->
-        <header>
-            <h1>
-                НЕ ТУДИ ПОВЕРНУЛИ?
-                <br>
-                СТОРІНКИ, НА ЯКУ ЗРОБЛЕНО ЗАПИТ, НЕ ІСНУЄ.
-            </h1>
-        </header>
+      <div class="container position-relative">
+        <img src="../assets/image/nail.png" alt="nail" class="nail position-absolute">
+        <img src="../assets/image/Error_404.png" alt="Page not found" class="board position-absolute">
+      </div>
 
-        <div class="body">
-            <h2>Error 404</h2>
-        </div>
+<!--        <header>-->
+<!--            <h1>-->
+<!--                НЕ ТУДИ ПОВЕРНУЛИ?-->
+<!--                <br>-->
+<!--                СТОРІНКИ, НА ЯКУ ЗРОБЛЕНО ЗАПИТ, НЕ ІСНУЄ.-->
+<!--            </h1>-->
+<!--        </header>-->
 
-        <footer>
-            <h3>
-                Ви можете перейти на головну сторінку або повернутися на попередню сторінку.
-                <br>
-                Або розгляньте можливість відвідати одну з популярних сторінок.
-            </h3>
-        </footer>
+<!--        <div class="body">-->
+<!--            <h2>Error 404</h2>-->
+<!--        </div>-->
+
+<!--        <footer>-->
+<!--            <h3>-->
+<!--                Ви можете перейти на головну сторінку або повернутися на попередню сторінку.-->
+<!--                <br>-->
+<!--                Або розгляньте можливість відвідати одну з популярних сторінок.-->
+<!--            </h3>-->
+<!--        </footer>-->
 
     </section>
 </template>
 
 <script>
-    // import imageSizeMixin from "../mixins/imageSizeMixin";
-    //
-    // export default {
-    //     name: "Error404",
-    //
-    //     mixins: [
-    //         imageSizeMixin
-    //     ],
-    //     mounted() {
-    //         setTimeout(() => {this.$store.commit("setShowPreload", false);}, 50)
-    //     },
-    // }
+
+    export default {
+        name: "Error404",
+
+        // mounted() {
+        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 50)
+        // },
+    }
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/styles/index";
+
+@keyframes rotation {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+     }
+}
 
     section.container-fluid {
-        position: relative;
-        margin: 0;
-        padding: 0;
+      height: 80vh;
+      background-image: url(../assets/image/wall.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      -webkit-background-size: cover;
+      background-size: cover;
+      padding: 50px 0;
+      .container {
         img {
-            width: 100%;
-        }
-        header {
-            position: absolute;
-            top: 100px;
-            left: 0;
-            width: 100%;
-            h1 {
-                color: #F0F0F0;
-                font-size: 3.5rem;
-                line-height: 2;
-                &:first-line {
-                    font-size: 4.5rem;
-                    font-weight: bolder;
-                }
-            }
-        }
+          display: block;
+          &.nail {
+            z-index: 10;
+            width: 40px;
+            top: -10px;
+            left: 49%;
+            right: 50%;
+          }
+          &.board {
+            width: 60%;
+            top: -20px;
+            left: 20%;
+            right: 20%;
 
-        .body {
-            position: absolute;
-            top: 300px;
-            left: 0;
-            width: 100%;
-            h2 {
-                font-size: 15rem;
-                color: rgba(0,0,255,0.1);
-            }
+            transform-origin: 333px 8%;
+            transform: rotate(15deg);
+            animation-name: rotation;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+          }
         }
+      }
 
-        footer {
-            position: absolute;
-            bottom: 200px;
-            left: 0;
-            width: 100%;
-            h3 {
-                color: #F0F0F0;
-                line-height: 2;
-                font-size: 2.0rem;
-            }
-        }
+
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {
