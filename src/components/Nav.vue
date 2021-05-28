@@ -41,7 +41,7 @@
           <li class="nav_link">
             <router-link class="nav_link d-block"
                          exact
-                         to="Custom_furniture_galery"
+                         to="/custom_furniture_gallery"
                          @click="toggleNav"
             >Custom furniture galery</router-link>
           </li>

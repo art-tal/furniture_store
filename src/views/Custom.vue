@@ -29,30 +29,37 @@ export default {
       types: [
         {
           typeName: "Kitchen",
+          slug: "kitchen",
           preview: "",
         },
         {
           typeName: "Desks",
+          slug: "desk",
           preview: "desk.png",
         },
         {
           typeName: "Sliding",
+          slug: "sliding",
           preview: "Sliding.jpg"
         },
         {
           typeName: "Children`s room",
+          slug: "children`s_room",
           preview: ""
         },
         {
           typeName: "Cabinet",
+          slug: "cabinet",
           preview: "cabinet.png"
         },
         {
           typeName: "Hallway",
+          slug: "hallway",
           preview: ""
         },
         {
           typeName: "Bed",
+          slug: "bed",
           preview: ""
         }
       ],

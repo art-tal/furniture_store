@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Custom from "../views/Custom";
+import Gallery from "../views/Gallery";
 import Error404 from "../views/Error404.vue";
 
 const routes = [
@@ -17,9 +18,15 @@ const routes = [
   },
 
   {
-    path: '/custom_furniture_galery',
+    path: '/custom_furniture_gallery',
     name: "custom",
     component: Custom,
+  },
+
+  {
+    path: "/gallery/:slug",
+    name: "gallery",
+    component: Gallery,
   },
 
   // {

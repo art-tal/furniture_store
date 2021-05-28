@@ -1,6 +1,6 @@
 <template>
 
-    <article class="card w-100 mb-5">
+    <article class="card w-100 mb-5" @click="goToView(productType.slug, productType.typeName)">
       <img :src="getPreview" class="card-img-top" :alt="productType.typeName">
       <div class="card-body">
         <h4 class="card-text text-center">{{productType.typeName}}</h4>
@@ -32,9 +32,21 @@ export default {
 
     }
   },
+
   created() {
-    console.log(this.productType);
-  }
+    // console.log(this.productType);
+  },
+
+  methods: {
+    goToView(slug, name) {
+      console.log( slug, name);
+      this.$router.push({
+        name: "gallery",
+        params: {slug: slug, name: name}
+      });
+    }
+
+  },
 }
 </script>
 
