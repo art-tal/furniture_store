@@ -76,14 +76,14 @@
           <li class="nav-item">
             <router-link class="nav_link"
                          exact
-                         to="/"
+                         to="/about"
                          @click="toggleNav"
             >About</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav_link"
                          exact
-                         to="/"
+                         to="/contacts"
                          @click="toggleNav"
             >Contacts</router-link>
           </li>
